@@ -1,6 +1,6 @@
 "use strict";
 
-const OFFLINE_DATA_FILE = "offline.js";
+const OFFLINE_DATA_FILE = "offline.json";
 const CACHE_NAME_PREFIX = "puzzle_offline";
 const BROADCASTCHANNEL_NAME = "puzzle_offline_chanel";
 const CONSOLE_PREFIX = "[Puzzle SW] ";
@@ -164,7 +164,7 @@ function CreateCacheFromFileList(cacheName, fileList, bypassCache) {
 };
 
 function UpdateCheck(isFirst) {
-    // Always bypass cache when requesting offline.js to make sure we find out about new versions.
+    // Always bypass cache when requesting offline.json to make sure we find out about new versions.
     return fetchWithBypass(OFFLINE_DATA_FILE, true)
         .then(r => r.json())
         .then(data => {
