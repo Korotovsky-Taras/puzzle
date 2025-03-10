@@ -3,9 +3,8 @@
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>Play Canvas Puzzle Game: Free Online Personalized Photo Jigsaw Puzzle Video Game</title>
-    <meta name="description"
-          content="Play Canvas Puzzle online for free. Canvas Puzzle is a simple customizable puzzle creation game. Create and assemble your own puzzles using a picture from your computer. This game is rendered in mobile-friendly HTML5, so it offers cross-device gameplay. You can play it on mobile devices like Apple iPhones, Google Android powered cell phones from manufactures like Samsung, tablets like the iPad or Kindle Fire, laptops, and Windows-powered desktop computers. All game files are stored locally in your web browser cache. This game works in Apple Safari, Google Chrome, Microsoft Edge, Mozilla Firefox, Opera and other modern web browsers."/>
+    <title>Puzzle Game</title>
+    <link rel="manifest" href="./assets/manifest-CFE1FxGS.json" crossorigin="use-credentials">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
     <script>
         function stayStill() {
@@ -17,14 +16,13 @@
 </head>
 
 <body ontouchmove="stayStill()" id="gameembed">
-<!-- JIGSAW CANVAS -->
+
 <div id="canvas-wrap">
     <canvas id="canvas"></canvas>
     <canvas class="hide" id="image"></canvas>
     <canvas class="hide" id="image-preview"></canvas>
 </div>
 
-<!-- GAME OPTIONS -->
 <div id="game-options">
     <ul>
         <li><b id="clock" class="button">00:00:00</b></li>
@@ -34,27 +32,23 @@
         <li><a href="#" id="JIGSAW_SHUFFLE" class="button left" title="Shuffle">Shuffle</a></li>
         <li><a href="#" id="SHOW_PREVIEW" class="button middle" title="Preview">Preview</a></li>
         <li><a href="#" id="SHOW_HELP" class="button help right" title="Help">Help</a></li>
-        <!-- END INSERT CUSTOM BUTTONS -->
         <li>
             <div class="styled-select">
                 <select id="set-parts" selected-index="8">
                 </select>
             </div>
         </li>
-        <!-- Insert custom buttons here -->
         <li id="create"><a href="#" class="button add" id="SHOW_FILEPICKER" title="Create puzzle">Create puzzle</a></li>
     </ul>
     <br class="clear"/>
 </div>
 
-<!-- MODAL WINDOW -->
 <div class="hide" id="overlay"></div>
 <div id="modal-window" class="hide">
     <div id="modal-window-msg"></div>
     <a href="#" id="modal-window-close" class="button">Close</a>
 </div>
 
-<!-- CONGRATULATION -->
 <div id="congrat" class="hide">
     <h1>Congratulations!</h1>
     <h2>You solved it in</h2>
@@ -68,7 +62,6 @@
     </form>
 </div>
 
-<!-- CREATE PUZZLE -->
 <div class="hide" id="create-puzzle">
     <h1>Choose an image</h1>
     <form id="image-form" id="add-image-form">
@@ -102,7 +95,6 @@
 </form>
 
 <iframe class="hide" src="about:blank" id="save-score" name="save-score"></iframe>
-
 
 
 </body>
