@@ -15,6 +15,7 @@
             event.preventDefault();
         }
     </script>
+  <script type="module" crossorigin src="./build/js/index.js"></script>
   <link rel="stylesheet" href="./assets/index-f4e3f1a4.css">
 </head>
 
@@ -102,66 +103,10 @@
     <input type="text" name="time" id="t"/>
     <input type="text" name="parts" id="p"/>
 </form>
+
 <iframe class="hide" src="about:blank" id="save-score" name="save-score"></iframe>
-<script src="js/sound.js"></script>
-<script src="js/event-emitter.min.js"></script>
-<script src="js/canvas-event.min.js"></script>
-<script src="js/canvas-puzzle.min.js"></script>
-<script>
-    window.addEventListener("DOMContentLoaded",  function () {
-        const sound = new game.Sound('sound/click', 10);
-        const jsaw = new jigsaw.Jigsaw({
-            defaultImage: "images/default-puzzle.png",
-            piecesNumberTmpl: "%d Pieces",
-            numberOfPieces: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
-            defaultPieces: 10
-        });
 
-        jsaw.eventBus.on(jigsaw.Events.PIECES_CONNECTED, function () {
-            sound.play();
-        });
 
-        if (jigsaw.GET["image"]) {
-            jsaw.set_image(jigsaw.GET["image"]);
-        }
-
-    })
-
-    // Pause and resume on page becoming visible/invisible
-    function onVisibilityChanged() {
-        if (document.hidden || document.mozHidden || document.webkitHidden || document.msHidden) {
-            console.log("suspended true")
-        } else {
-            console.log("suspended false")
-        }
-    }
-
-    document.addEventListener("visibilitychange", onVisibilityChanged, false);
-    document.addEventListener("mozvisibilitychange", onVisibilityChanged, false);
-    document.addEventListener("webkitvisibilitychange", onVisibilityChanged, false);
-    document.addEventListener("msvisibilitychange", onVisibilityChanged, false);
-
-    function OnRegisterSWError(e) {
-        console.warn("Failed to register service worker: ", e);
-    }
-
-    // Runtime calls this global method when ready to start caching (i.e. after startup).
-    // This registers the service worker which caches resources for offline support.
-    window.C2_RegisterSW = function C2_RegisterSW() {
-        if (!navigator.serviceWorker)
-            return;		// no SW support, ignore call
-
-        try {
-            navigator.serviceWorker.register("sw.js", {scope: "./"})
-                .then(function (reg) {
-                    console.log("Registered service worker on " + reg.scope);
-                })
-                .catch(OnRegisterSWError);
-        } catch (e) {
-            OnRegisterSWError(e);
-        }
-    };
-</script>
 
 
 </body>
