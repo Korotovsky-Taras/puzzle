@@ -1,7 +1,6 @@
 {
-  "name": "Bible Coloring Book for Kids",
-  "short_name": "Bible Coloring Book for Kids",
-  "start_url": "index.html",
+  "short_name": "Puzzle",
+  "name": "Puzzle for Kids",
   "display": "fullscreen",
   "orientation": "landscape",
   "icons": [{
@@ -24,5 +23,12 @@
     "src": "/icons/icon-256.png",
     "sizes": "256x256",
     "type": "image/png"
-  }]
+  }
+  ],
+  "id": "/?source=pwa",
+  "start_url": "/?source=pwa",
+  "background_color": "#3367D6",
+  "scope": "/",
+  "theme_color": "#3367D6",
+  "description": "Weather forecast information",
 }
