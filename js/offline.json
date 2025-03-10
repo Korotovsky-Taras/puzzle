@@ -1,0 +1,17 @@
+﻿{
+	"version": 1539819575,
+	"fileList": [
+		"js/offlineClient.js",
+		"js/canvas-puzzle.min.js",
+		"js/event-emitter.min.js",
+		"js/canvas-event.min.js",
+		"js/sound.js",
+		"images/arrow.png",
+		"images/default-puzzle.png",
+		"images/help.png",
+		"images/plus.png",
+		"images/selector.png",
+		"images/toggle.png",
+		"sound/click.mp3"
+	]
+}
