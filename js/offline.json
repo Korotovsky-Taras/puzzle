@@ -1,17 +1,22 @@
 ﻿{
-	"version": 1539819575,
+	"version": 1539819576,
 	"fileList": [
-		"js/offlineClient.js",
-		"js/canvas-puzzle.min.js",
-		"js/event-emitter.min.js",
-		"js/canvas-event.min.js",
-		"js/sound.js",
+		"js/main.js",
 		"images/arrow.png",
 		"images/default-puzzle.png",
-		"images/help.png",
 		"images/plus.png",
 		"images/selector.png",
 		"images/toggle.png",
+		"pwa/icon-48x48.png",
+		"pwa/icon-72x72.png",
+		"pwa/icon-96x96.png",
+		"pwa/icon-128x128.png",
+		"pwa/icon-144x144.png",
+		"pwa/icon-152x152.png",
+		"pwa/icon-192x192.png",
+		"pwa/icon-256x256.png",
+		"pwa/icon-384x384.png",
+		"pwa/icon-512x512.png",
 		"sound/click.mp3"
 	]
 }
