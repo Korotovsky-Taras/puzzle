@@ -1,0 +1,101 @@
+.app-btn {
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0 30px;
+    height: 70px;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+.app-btn__secondary {
+    color: #30485a;
+    background-color: #dfe7ec;
+    &:hover {
+        background-color: #bacdd8;
+    }
+}
+
+.app-btn__primary {
+    background-color: #fda517;
+    color: white;
+
+    &:hover {
+        background-color: #ffbb4c;
+    }
+}
+
+.app-checkbox {
+    --icon-size: 18px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    position: relative;
+    vertical-align: middle;
+    box-sizing: border-box;
+    user-select: none;
+    margin-right: 4px;
+    margin-top: -2px;
+
+    .app-checkbox__icon {
+        position: absolute;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--icon-size);
+        height: var(--icon-size);
+        border: 1px solid;
+        border-radius: 2px;
+        box-sizing: border-box;
+
+        &:after {
+            content: "";
+            visibility: hidden;
+            position: absolute;
+            background-color: #fda517;
+            left: 2px;
+            right: 2px;
+            top: 2px;
+            bottom: 2px;
+        }
+    }
+
+    input[type=checkbox] {
+        visibility: hidden;
+        position: absolute;
+
+        &:disabled {
+            ~ .app-checkbox__icon {
+                opacity: 0.3;
+            }
+        }
+        &:checked {
+            ~ .app-checkbox__icon:after {
+                visibility: visible;
+            }
+        }
+    }
+}
+
+.app-select {
+    padding: 6px 10px;
+    appearance: none;
+    width: 140px;
+    background: transparent;
+    color: #fda517;
+    border: none;
+    font-size: inherit;
+    outline: none;
+}

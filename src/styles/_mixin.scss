@@ -1,0 +1,50 @@
+@use "sass:map";
+@use "sass:meta";
+@use "sass:list";
+@use "variables" as v;
+
+@mixin mq($styles: ()) {
+
+    $styles: map.merge((
+        points: (),
+        device: screen,
+        split: false,
+    ), $styles);
+
+    $points: map.get($styles, points);
+    $device: map.get($styles, device);
+    $split: map.get($styles, split);
+
+    @if (meta.type-of($points) == map) {
+        $keys: map.keys($points);
+        $values: map.values($points);
+
+        @if list.length($points) == 1 {
+            @media #{$device} and (#{list.nth($keys, 1)}: #{list.nth($values, 1)}) {
+                @content;
+            }
+        } @else {
+            @if ($split) {
+                @media #{$device} and (#{list.nth($keys, 1)}: #{list.nth($values, 1)}) and (#{list.nth($keys, 2)}: #{list.nth($values, 2)}) {
+                    @content;
+                }
+            } @else {
+                @media #{$device} and (#{list.nth($keys, 1)}: #{list.nth($values, 1)}), #{$device} and (#{list.nth($keys, 2)}: #{list.nth($values, 2)}) {
+                    @content;
+                }
+            }
+        }
+    }
+}
+
+@mixin mq-min($n) {
+    @include mq((points: (min-width: v.media-min($n)))){
+        @content;
+    }
+}
+
+@mixin mq-max($n) {
+    @include mq((points: (max-width: v.media-max($n)))){
+        @content;
+    }
+}

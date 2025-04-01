@@ -1,0 +1,38 @@
+@use "sass:map";
+@use "sass:meta";
+@use "sass:list";
+
+$media-point-sm: 768px;
+$media-point-md: 1024px;
+$media-point-lg: 1200px;
+$media-point-xl: 1440px;
+
+$media-points: ($media-point-sm, $media-point-md, $media-point-lg, $media-point-xl);
+
+@function media-min($n) {
+    @if meta.type-of($n) == number {
+        @if $n > list.length($media-points) {
+            @error "максимальное значение точки #{list.length($media-points)}"
+        } @else {
+            @return list.nth($media-points, $n);
+        }
+    } @else if meta.type-of($n) == string {
+        @if $n == sm {
+            @return $media-point-sm;
+        }
+        @if $n == md {
+            @return $media-point-md;
+        }
+        @if $n == lg {
+            @return $media-point-lg;
+        }
+        @if $n == xl {
+            @return $media-point-xl;
+        }
+    }
+}
+
+@function media_max($n) {
+    $point: media-min($n);
+    @return ($point - 1px);
+}

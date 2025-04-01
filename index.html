@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Puzzle Game</title>
+    <link rel="stylesheet" href="./src/styles/main.scss" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+</head>
+
+<body>
+
+<div id="canvas-wrap">
+    <canvas id="canvas"></canvas>
+    <canvas class="hide" id="image"></canvas>
+    <canvas class="hide" id="image-preview"></canvas>
+</div>
+
+
+<div class="hide" id="overlay"></div>
+<div id="modal-window" class="hide">
+    <div class="modal-window--container">
+        <h1>Поздравляем!</h1>
+        <h2 class="mt-1">Вы успешно собрали пазл за: <span id="time"></span></h2>
+        <div class="mt-2 text-center">Желаете поиграть еще?</div>
+        <div class="modal-window--footer">
+            <button id="modal-window-choice" class="app-btn size-xl app-btn__primary" title="Выбирать игру">
+                Выбирать игру
+            </button>
+            <button id="modal-window-close" class="app-btn size-xl app-btn__secondary js-sidebar-skip--event">
+                Закрыть
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<div class="app-slider-panel" id="sidebar-panel">
+    <div class="app-slider-panel__header">
+        <div class="app-slider-hamburger__btn js-sidebar-open">
+            <div class="app-slider-hamburger__icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <div class="app-slider-panel__body">
+
+        <a href="#" class="app-slider-selector"><img src="./images/0.jpg" alt="" /></a>
+        <a href="#" class="app-slider-selector"><img src="./images/1.jpg" alt="" /></a>
+        <a href="#" class="app-slider-selector"><img src="./images/2.jpg" alt="" /></a>
+        <a href="#" class="app-slider-selector"><img src="./images/3.jpg" alt="" /></a>
+        <a href="#" class="app-slider-selector"><img src="./images/4.jpg" alt="" /></a>
+
+        <div class="hide">
+            <div class="hide" id="create-puzzle">
+                <form id="add-image-form">
+                    <input type="file" id="image-input">
+                    <p id="image-error">это не картинка</p>
+                    <p id="dnd"><i>или перетяните с компьютера</i></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form class="hide" method="post" id="redirect-form">
+    <input type="text" name="time" id="t"/>
+    <input type="text" name="parts" id="p"/>
+</form>
+
+<iframe class="hide" src="about:blank" id="save-score" name="save-score"></iframe>
+
+
+<div class="app-footer" id="game-options">
+    <b id="clock"></b>
+    <button id="START_GAME" class="app-btn app-footer__ab-right size-xl app-btn__primary" title="Начать игру">
+        Начать игру
+    </button>
+    <label for="set-parts">
+        <span>Сложность:</span>
+        <select id="set-parts" class="app-select"></select>
+    </label>
+    <label for="set-preview">
+            <span class="app-checkbox">
+                <input type="checkbox" id="set-preview" class="app-btn size-xl app-btn__primary" title="Подсказка"/>
+                <i class="app-checkbox__icon"></i>
+            </span>
+        <span class="app-checkbox__text">Подсказка</span>
+    </label>
+</div>
+
+<script type="module" src="./src/js/main.js"></script>
+
+</body>
+</html>

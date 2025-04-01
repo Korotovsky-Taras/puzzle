@@ -1,0 +1,55 @@
+@use "shared";
+@use "modal";
+@use "button";
+@use "slider-panel";
+@use "footer";
+
+
+#canvas-wrap {
+    width: 100%;
+    height: calc(100% - 100px);
+    background: #fff;
+}
+
+canvas#canvas, canvas#buffer, canvas#image-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+canvas#canvas {
+    z-index: 100;
+}
+
+.loading #canvas-wrap {
+    background: url(./loader.gif) no-repeat center;
+}
+
+.loading canvas {
+    visibility: hidden;
+}
+
+canvas#buffer {
+    z-index: 70;
+}
+
+canvas#image-preview.show {
+    left: 50%;
+    opacity: .5;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+#clock {
+    display: block;
+    text-align: center;
+    position: absolute;
+    pointer-events: none;
+    font-size: 40px;
+    color: #dee8ef;
+    font-family: sans-serif;
+    right: 100%;
+    z-index: 200;
+    user-select: none;
+    margin-right: 30px;
+}
