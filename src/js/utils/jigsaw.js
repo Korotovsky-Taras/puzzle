@@ -6,7 +6,7 @@ import {Cevent} from "./canvas-event.js";
 import {EventEmitter} from "./event-emitter.js";
 
 const DEFAULT_PIECES = [3, 20, 50, 75, 100];
-const DEFAULT_PIECES_TEXT = ["очень легко", "легко", "сложно", "очень сложно", "эксперт"];
+const DEFAULT_PIECES_TEXT = ["вельмі лёгка", "лёгка", "складана", "вельмі складана", "эксперт"];
 
 function valueOptionTextSupplier(i) {
     return DEFAULT_PIECES_TEXT[i]
