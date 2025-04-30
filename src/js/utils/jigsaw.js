@@ -278,7 +278,7 @@ export const jigsaw = (function (document, window, undefined) {
         offsetTop: window.innerHeight * 0.2,
         maxWidth: window.innerWidth * 0.8,
         maxHeight: window.innerHeight * 0.6,
-        defaultImage: "images/0.jpg",
+        defaultImage: "images/puzzle-01.jpg",
         piecesNumberTmpl: "%d Pieces",
         redirect: "",
         border: true,

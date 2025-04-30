@@ -4,7 +4,7 @@ import {game} from "./utils/game.js";
 
 window.addEventListener("DOMContentLoaded",  function () {
     game.configure({
-        defaultImage: "./images/0.jpg",
+        defaultImage: "./images/puzzle-01.jpg",
         piecesNumberTmpl: "%d Pieces",
         defaultPieces: 3,
     });
