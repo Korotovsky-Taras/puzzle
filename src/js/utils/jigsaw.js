@@ -448,7 +448,6 @@ export const jigsaw = (function (document, window, undefined) {
             let ox = ~~((w - cols * width) / 2), oy = ~~((h - rows * height) / 2);
             ox = ox >= 0 ? ox : 0;
             oy = oy >= 0 ? oy : 0;
-            this.preview.style.marginTop = this.opts.offsetTop + "px";
             this.preview.width = width * cols;
             this.preview.height = height * rows;
             this.preview.style.width = this.preview.width / getPixelRatio() + "px";
@@ -543,7 +542,6 @@ export const jigsaw = (function (document, window, undefined) {
         }, show_preview: function () {
             let canvas = Util.getElement("image-preview");
             canvas.className = canvas.className === "show" ? "hide" : "show";
-            canvas.style.marginLeft = -(canvas.width / 2 / pixelRatio) + "px"
         }, show_time: function () {
             this.show_modal("congrat");
             Util.getElement("START_GAME").style.display = null;
